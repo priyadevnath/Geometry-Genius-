@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Gem</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.10.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="m-4 md:m-8">
+
+    <header>
+            <div class="flex bg-sky-100 justify-between px-2 md:px-7 mb-10">
+              <div>
+                <h1  class="font-semibold text-blue-950   text-xl md:text-2xl mt-7 font-sans">Interactive </h1> 
+                  <p class="text-sm md:text-lg text-gray-400 font-semibold m-1">Geometry Genius </p>
+              </div>
+              <div>
+                <button class="btn btn-primary w-20 md:w-32 bg-sky-500 rounded-md text-cyan-50 font-semibold text-lg mt-9 mb-9 border-none ml-4">Blog</button>
+              </div>
+            </div>
+
+    </header>
+
+    <main>
+        <!-- main contain container -->
+        <div class="flex flex-col md:flex-row ">
+
+            <!-- Shape card container -->
+            <div class="flex-1 grid grid-cols-1 md:grid-cols-3 justify-between">
+                
+                 <!-- Triangle -->
+
+                  <div class="w-72 h-full border-2 border-inherit rounded-md shadow-2xl ">
+                        <img class="pt-10 w-44 display: block m-auto" src="images/triangle.png">
+                        <h4 class="font-semibold text-zinc-600 text-xl  text-center mt-7 font-sans">Triangle</h4>
+                        <p class="text-center text-sm text-slate-600 font-medium m-1">Area (A) = 0.5 x b x h</p>
+                        <div class="flex gap-2 pl-10 pt-2">
+                          <input id="triangle-base" class="w-16 text-center bg-slate-200  " type="text" placeholder="b">
+                        <h6 class="text-sm">cm</h6>
+
+                        <input id="triangle-height" class="w-16 bg-slate-200 text-center" type="text" placeholder="h">
+                        <h6 class="text-sm">cm</h6>
+                        </div>
+
+                        <div class="text-center font-semibold text-red-800">
+                          <p>Area : <span id="triangle-area"></span><span>cm</span><sup>2</sup></p>
+                        </div>
+                        <button onclick="calculateTriangleArea()" class="btn btn-primary w-60 bg-sky-500 rounded-md text-cyan-50 font-semibold text-lg mt-2 mb-9 border-none ml-4">Calculate</button>
+
+                  </div>          
+
+             <!-- Rectangle -->
+
+             <div class="w-72 h-full border-2 border-inherit rounded-md shadow-2xl pt-7">
+              <img class="pt-10 w-44 display: block m-auto" src="images/rectangle.png">
+              <h4 class="font-semibold text-zinc-600 text-xl  text-center mt-7 font-sans">Rectangle</h4>
+              <p class="text-center text-sm text-slate-600 font-medium m-1">Area (A) = l x w</p>
+              <div class="flex gap-2 pl-10 pt-2">
+                <input id="rectangle-length" class="w-16 bg-slate-200 text-center " type="text" placeholder="l">
+              <h6 class="text-sm">cm</h6>
+
+              <input id="rectangle-width" class="w-16 bg-slate-200 text-center" type="text" placeholder="w">
+              <h6 class="text-sm">cm</h6>
+              </div>
+
+              <div class="text-center font-semibold text-red-800">
+                <p>Area : <span id="rectangle-area"></span><span>cm</span><sup>2</sup></p>
+              </div>
+              <button onclick="calculateRectangleArea()" class="btn btn-primary w-60 bg-sky-500 rounded-md text-cyan-50 font-semibold text-lg m mb-9 mt-2 border-none ml-4">Calculate</button>
+
+        </div>
+
+                   <!-- Parallelogram --> 
+
+                   <div class="w-72 h-full border-2 border-inherit rounded-md shadow-2xl  pt-9 ">
+                    <img class="pt-10 w-44 display: block m-auto" src="images/parallelogram.png">
+                    <h4 class="font-semibold text-zinc-600 text-xl  text-center mt-7 font-sans">Parallelogram</h4>
+                    <p class="text-center text-sm text-slate-600 font-medium m-1">Area (A) = b x h</p>
+                    <div class="flex gap-2 pl-10 pt-2">
+                      <input id="parallelogram-base" class="w-16 bg-slate-200 pl-2 " type="text" placeholder="b">
+                    <h6 class="text-sm">cm</h6>
+
+                    <input id="parallelogram-height" class="w-16 bg-slate-200 pl-2" type="text" placeholder="h">
+                    <h6 class="text-sm">cm</h6>
+                    </div>
+                   <div class="text-center font-semibold text-red-800">
+                    <p>Area : <span id="parallelogram-area"></span><span>cm</span><sup>2</sup></p>
+              </div>
+                    <button onclick="calculateParallelogramArea()" class="btn btn-primary w-60 bg-sky-500 rounded-md text-cyan-50 font-semibold text-lg mt-3 mb-9 border-none ml-4">Calculate</button>
+
+              </div>
+
+
+                 <!-- Rhombus -->
+
+                 <div class="w-72 h-full border-2 border-inherit rounded-md shadow-2xl md:mt-7">
+                  <img class="pt-10 w-40 display: block m-auto" src="images/rhombus.png">
+                  <h4 class="font-semibold text-zinc-600 text-xl  text-center mt-7 font-sans">Rhombus</h4>
+                  <p class="text-center text-sm text-slate-600 font-medium m-1">Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub></p>
+                  <div class="flex gap-2 pl-10 pt-2">
+                    <input id="rhombus-d1" class="w-16 bg-slate-200 pl-2 " type="text" placeholder="d1">
+                  <h6 class="text-sm">cm</h6>
+
+                  <input id="rhombus-d2" class="w-16 bg-slate-200 pl-2" type="text" placeholder="d2">
+                  <h6 class="text-sm">cm</h6>
+                  </div>
+                  <div class="text-center font-semibold text-red-800">
+                    <p>Area : <span id="rhombus-area"></span><span>cm</span><sup>2</sup></p>
+              </div>
+                  <button onclick="calculateRhombusArea()" class="btn btn-primary w-60 bg-sky-500 rounded-md text-cyan-50 font-semibold text-lg mt-2 mb-9 border-none ml-4">Calculate</button>
+
+            </div> 
+
+
+
+             <!-- Pentagon -->
+
+             <div class="w-72 h-full border-2 border-inherit rounded-md shadow-2xl md:mt-7">
+              <img class="pt-10 w-32 display: block m-auto" src="images/pentagon.png">
+              <h4 class="font-semibold text-zinc-600 text-xl  text-center mt-7 font-sans">Pentagon</h4>
+              <p class="text-center text-sm text-slate-600 font-medium m-1">Area (A) = 0.5 x p x b</p>
+              <div class="flex gap-2 pl-10 pt-2">
+                <input id="pentagon-p" class="w-16 bg-slate-200 pl-2 " type="text" placeholder="p">
+              <h6 class="text-sm">cm</h6>
+
+              <input id="pentagon-base" class="w-16 bg-slate-200 pl-2" type="text" placeholder="b">
+              <h6 class="text-sm">cm</h6>
+              </div>
+              <div class="text-center font-semibold text-red-800">
+                <p>Area : <span id="pentagon-area"></span><span>cm</span><sup>2</sup></p>
+          </div>
+              <button onclick="calculatePentagonArea()" class="btn btn-primary w-60 bg-sky-500 rounded-md text-cyan-50 font-semibold text-lg mt-2 mb-9 border-none ml-4">Calculate</button>
+
+        </div> 
+
+
+
+           <!-- Ellipse -->
+
+           <div class="w-72 h-full border-2 border-inherit rounded-md shadow-2xl md:mt-7">
+            <img class="pt-14 w-44 display: block m-auto" src="images/ellipse.png">
+            <h4 class="font-semibold text-zinc-600 text-xl  text-center mt-7 font-sans">Ellipse</h4>
+            <p class="text-center text-sm text-slate-600 font-medium m-1">Area (A) = a x b</p>
+            <div class="flex gap-2 pl-10 pt-2">
+              <input id="ellipse-a" class="w-16 bg-slate-200 pl-2 " type="text" placeholder="a">
+            <h6 class="text-sm">cm</h6>
+
+            <input id="ellipse-base" class="w-16 bg-slate-200 pl-2" type="text" placeholder="b">
+            <h6 class="text-sm">cm</h6>
+            </div>
+            <div class="text-center font-semibold text-red-800">
+              <p>Area : <span id="ellipse-area"></span><span>cm</span><sup>2</sup></p>
+        </div>
+            <button onclick="calculateEllipseArea()" class="btn btn-primary w-60 bg-sky-500 rounded-md text-cyan-50 font-semibold text-lg mt-2 mb-9 border-none ml-4">Calculate</button>
+
+      </div> 
+
+
+
+
+
+
+
+
+            </div>
+            <!-- Area Calculation --> 
+            <!-- <div class="w-72 h-72 border-2 border-gray-200 rounded-md "> 
+
+                <h3 class="text-xl font-semibold text-center p-4 ">Area Calculation</h3>
+
+            </div> -->
+
+        </div>
+    </main>
+    <script src="calculate.js"></script>
+</body>
+</html>
